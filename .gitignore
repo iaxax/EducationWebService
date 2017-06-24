@@ -1,0 +1,6 @@
+**/*.pyc
+model/dao/config.py
+model/dao/education.db
+
+
+
