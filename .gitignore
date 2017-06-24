@@ -1,6 +1,6 @@
 **/*.pyc
-model/dao/config.py
-model/dao/education.db
+dao/connection/config.py
+dao/data/
 
 
 
