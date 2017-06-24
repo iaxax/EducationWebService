@@ -37,27 +37,21 @@ class CourseWebService(ServiceBase):
 	# def getSelectCourseInfo(studentId):
 	# 	return StudentService.getSelectCourseInfo(studentId)
 
+
+import logging
+from wsgiref.simple_server import make_server
+
 application = Application(
 		[CourseWebService], 'edu.nju.software.education.soap',
         in_protocol=Soap11(validator='lxml'),
          out_protocol=Soap11()
-)
+)	
+app = WsgiApplication(application)	
+    		
+logging.basicConfig(level=logging.DEBUG)
+logging.getLogger('spyne.protocol.xml').setLevel(logging.DEBUG)
 
-wsgi_application = WsgiApplication(application)
-
-
-if __name__ == '__main__':
-    import logging
-
-    from wsgiref.simple_server import make_server
-
-    logging.basicConfig(level=logging.DEBUG)
-    logging.getLogger('spyne.protocol.xml').setLevel(logging.DEBUG)
-
-    logging.info("listening to http://127.0.0.1:8000")
-    logging.info("wsdl is at: http://localhost:8000/?wsdl")
-
-    server = make_server('127.0.0.1', 8000, wsgi_application)
-    server.serve_forever()
-
-
+logging.info("listening to http://127.0.0.1:8088")
+logging.info("wsdl is at: http://localhost:8088/?wsdl")
+		
+		
