@@ -6,16 +6,16 @@ from department import departmentId
 
 class CourseStatisticsInfo(ComplexModel):
 
-    courseId = None
+    courseid = None
     studentNum = None
     name = None
-    institutionId = unicode(departmentId)
+    institution = unicode(departmentId)
     
     _type_info = {
-        'courseId': Unicode,
+        'courseid': Unicode,
         'studentNum': Unicode,
         'name': Unicode,
-        'institutionId': Unicode
+        'institution': Unicode
     }
 
     def __init__(self, courseId, studentNum, name):
@@ -25,20 +25,20 @@ class CourseStatisticsInfo(ComplexModel):
 
 
 class StudentStatisticsInfo(ComplexModel):
-    studentId = None
+    studentid = None
     courseNum = None
     name = None
-    institutionId = unicode(departmentId)
+    institution = unicode(departmentId)
 
     _type_info = {
-        'studentId': Unicode,
+        'studentid': Unicode,
         'courseNum': Unicode,
         'name': Unicode,
-        'institutionId': Unicode
+        'institution': Unicode
     }
 
     def __init__(self, studentId, courseNum, name):
-        self.studentId = studentId
+        self.studentid = studentId
         self.courseNum = courseNum
         self.name = name
 
