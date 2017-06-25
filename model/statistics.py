@@ -19,7 +19,7 @@ class CourseStatisticsInfo(ComplexModel):
     }
 
     def __init__(self, courseId, studentNum, name):
-        self.courseId = courseId
+        self.courseid = courseId
         self.studentNum = studentNum
         self.name = name
 
